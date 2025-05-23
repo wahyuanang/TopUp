@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/css/oTopupin.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .scrollbar-hidden::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <title>Account</title>
+</head>
+<body class="bg-black text-white font-sans">
+  <!-- Navbar -->
+    <nav class="bg-[#242424] p-3 border-b border-gray-800 text-white fixed top-0 w-full z-50">
+    <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-lg font-bold">
+            <a href="../Home.html">Topup<span class="text-[#D7FD52]">in</span></a>
+        </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-4">
+        <div class="relative">
+            <input type="text" class="text-gray-400 rounded px-3 py-1 w-48 bg-white" placeholder="Search..." />
+            <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                <i class="fas fa-search text-gray-400"></i>
+            </button>
+        </div>
+        <a href="History.html" class="hover:text-[#D7FD52] flex items-center gap-1">
+            <i class="fas fa-box"></i> Lacak Pesanan
+        </a>
+        <a href="#" class="hover:text-[#D7FD52]">
+          <i class="fas fa-user"></i>
+        </a>
+    </div>
+
+    <!-- Burger Button (Mobile) -->
+    <button class="md:hidden block focus:outline-none" onclick="toggleDropdown()">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Dropdown Menu -->
+<div id="dropdownMenu" class="fixed top-12 left-0 w-full bg-[#242424] text-white z-40 hidden animate-slide-down">
+  <div class="flex flex-col px-6 py-4 space-y-4 border-t border-gray-700">
+    <div class="relative">
+      <input type="text" class="text-gray-400 rounded px-3 py-2 w-full bg-white" placeholder="Search..." />
+      <button class="absolute right-3 top-1/2 transform -translate-y-1/2">
+        <i class="fas fa-search text-gray-400"></i>
+      </button>
+    </div>
+    <a href="History.html" class="hover:text-[#D7FD52] text-lg flex items-center gap-2">
+      <i class="fas fa-box"></i> Lacak Pesanan
+    </a>
+    <a href="#" class="hover:text-[#D7FD52] text-lg flex items-center gap-2">
+      <i class="fas fa-user"></i> Akun Saya
+    </a>
+  </div>
+</div>
+
+<script>
+  function toggleDropdown() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.classList.toggle("hidden");
+  }
+</script>
+<style>
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+
+
+    <!-- Banner Start -->
+    <div class="mt-[60px] relative overflow-hidden bg-black w-full aspect-[17/5] max-w-screen-xl mx-auto" id="carousel">
+        <!-- Wrapper gambar -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="../assets/promo/promosi1.png" alt="Banner 1"
+            class="carousel-image absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100" />
+            <img src="../assets/promo/promosi2.png" alt="Banner 2"
+            class="carousel-image absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0" />
+        </div>
+
+        <!-- Tombol Indikator Start -->
+        <div class="absolute bottom-2 w-full flex justify-center space-x-2 z-10">
+            <button class="w-3 h-3 rounded-full bg-white" data-index="0"></button>
+            <button class="w-3 h-3 rounded-full bg-gray-500" data-index="1"></button>
+        </div>
+        <!-- Tombol Indikator End -->
+
+        <!-- Script Tombol Indikator Start -->
+        <script>
+            const carousel = document.getElementById('carousel');
+            const images = carousel.querySelectorAll('img');
+            const buttons = carousel.querySelectorAll('button');
+            let currentIndex = 0;
+            let interval = null;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                img.classList.toggle('opacity-100', i === index);
+                img.classList.toggle('opacity-0', i !== index);
+                });
+                buttons.forEach((btn, i) => {
+                btn.classList.toggle('bg-white', i === index);
+                btn.classList.toggle('bg-gray-500', i !== index);
+                });
+                currentIndex = index;
+            }
+
+            buttons.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                showImage(Number(btn.dataset.index));
+                resetInterval();
+                });
+            });
+
+            function nextImage() {
+                const nextIndex = (currentIndex + 1) % images.length;
+                showImage(nextIndex);
+            }
+
+            function resetInterval() {
+                clearInterval(interval);
+                interval = setInterval(nextImage, 5000);
+            }
+
+            showImage(0);
+            interval = setInterval(nextImage, 5000);
+        </script>
+        <!-- Script Tombol Indikator End -->
+    </div>
+    <!-- Banner End -->
+
+    <!-- Tombol Navigasi Kategori Start -->
+    <div class="container mx-auto px-4 py-6">  
+        <div class="px-4 sm:px-6 mt-1 kategori-content">
+            <div class="flex justify-start gap-1 sm:gap-2">
+                <a href="../Home.html" data-category="semua" class="kategori-btn flex-1 sm:flex-none sm:w-28 bg-zinc-800 text-white px-1 sm:px-4 py-2 rounded-md text-xs sm:text-sm text-center font-medium truncate transition duration-150 ease-in-out hover:bg-lime-400 hover:text-black">SEMUA</a>
+                <a href="TopUp.html" data-category="top up" class="kategori-btn flex-1 sm:flex-none sm:w-28 bg-zinc-800 text-white px-1 sm:px-4 py-2 rounded-md text-xs sm:text-sm text-center font-medium truncate transition duration-150 ease-in-out hover:bg-lime-400 hover:text-black">TOP UP</a>
+                <a href="Account.html" data-category="akun" class="kategori-btn flex-1 sm:flex-none sm:w-28 bg-lime-400 text-black px-1 sm:px-4 py-2 rounded-md text-xs sm:text-sm text-center font-medium truncate">AKUN</a>
+                <a href="#" class="kategori-btn flex-1 sm:flex-none sm:w-28 bg-zinc-800 text-white px-1 sm:px-4 py-2 rounded-md text-xs sm:text-sm text-center font-medium truncate transition duration-150 ease-in-out hover:bg-lime-400 hover:text-black">JASA JOKI</a>
+            </div>
+        </div>
+    </div>    
+    <!-- Tombol Navigasi Kategori End -->
+
+    <!-- Script Tombol Kategori Start -->
+    <script>
+        // Tampilkan konten sesuai kategori saat tombol ditekan
+        document.querySelectorAll('.kategori-btn').forEach(button => {
+            button.addEventListener('click', () => {
+            const kategori = button.dataset.kategori;
+
+                // Aktifkan tombol terpilih
+                document.querySelectorAll('.kategori-btn').forEach(btn => btn.classList.remove('bg-lime-400', 'text-black', 'font-bold'));
+                button.classList.add('bg-lime-400', 'text-black', 'font-bold');
+
+                // Tampilkan/hidden konten sesuai kategori
+                document.querySelectorAll('.kategori-content').forEach(content => {
+                content.style.display = (content.dataset.kategori === kategori || kategori === 'akun') ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+    <!-- Script Tombol Kategori End -->
+
+    <!-- Konten Produk Start -->
+    <div class="w-full max-w-[1450px] mx-auto bg-[#242424] rounded-2xl p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 text-white">
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logococ.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <a href="AccountCoc.html">
+                    <p class="font-semibold text-sm sm:text-base md:text-xl">Clash of Clans<br class="hidden sm:block"> Edition - Microsoft</p>
+                </a>
+            </div>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logobalap.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">Asphalt 9 Legends<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logodf.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">Garena Delta Force<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logoepep.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">Garena Free Fire<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logofornite.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">Fortnite<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logomobile.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">Mobile Legend<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logopb.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">Point Blank<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logopokemon.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">Pokemon<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logopubg.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">PUBG<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logoroblok.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">Roblox<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+
+       <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logosaitama.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">One Punch Man<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+
+        <button class="w-full flex items-center space-x-3 sm:space-x-4 p-3 rounded-xl hover:bg-[#2c2c2c] transition-all cursor-pointer text-left">
+            <img src="../assets/logogame/logovalo.png" alt="epep" class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded object-cover flex-shrink-0" />
+            <div>
+                <p class="font-semibold text-sm sm:text-base md:text-xl">Valorant<br class="hidden sm:block"> Edition - Microsoft</p>
+            </div>
+        </button>
+    </div>
+    <!-- Konten Produk End -->
+
+    <!-- Footer - MOVED OUTSIDE the container div -->
+    <footer class="bg-[#242424] mt-10 rounded-t-[15px] w-full">
+        <div class="container mx-auto px-4 py-2">
+            <div class="flex flex-col md:flex-row justify-between mb-6">
+                <!-- Left -->
+                <div class="mb-4 md:mb-0">
+                    <div class="text-xl font-bold mb-1 text-white font-sans">Topup<span class="text-[#D7FD52]">in</span></div>
+                    <div class="text-sm text-gray-400 font-sans">Game Voucher</div>
+                </div>
+                
+                <!-- Right -->
+                <div class="text-right">
+                    <div class="text-sm font-semibold mb-2 text-white font-sans">Metode Pembayaran</div>
+                    <div class="flex flex-wrap justify-end gap-2">
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../assets/logopembayaran/qris.png" alt="QRIS" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../assets/logopembayaran/blu.png" alt="BLU" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../assets/logopembayaran/dana.png" alt="DANA" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../assets/logopembayaran/ovo.png" alt="OVO" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer bawah -->
+            <div class="border-t border-gray-800 pt-4 flex flex-wrap gap-4 justify-center md:justify-start text-xs text-gray-500 font-sans">
+                <span>©2023</span>
+                <span>Privacy</span>
+                <span>Terms</span>
+                <span>Sitemap</span>
+                <span>Blog</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

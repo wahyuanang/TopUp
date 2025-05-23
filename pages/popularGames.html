@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topupin</title>
+  <link rel="stylesheet" href="../assets/css/oTopupin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="Main.js"></script>
+  <style>
+    .scrollbar-hidden::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Navbar -->
+    <nav class="bg-[#242424] p-3 border-b border-gray-800 text-white fixed top-0 w-full z-50">
+    <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-lg font-bold">
+            <a href="../Home.html">Topup<span class="text-[#D7FD52]">in</span></a>
+        </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-4">
+        <div class="relative">
+            <input type="text" class="text-gray-400 rounded px-3 py-1 w-48" placeholder="Search..." />
+            <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                <i class="fas fa-search text-gray-400"></i>
+            </button>
+        </div>
+        <a href="History.html" class="hover:text-[#D7FD52] flex items-center gap-1">
+            <i class="fas fa-box"></i> Lacak Pesanan
+        </a>
+        <a href="#" class="hover:text-[#D7FD52]">
+          <i class="fas fa-user"></i>
+        </a>
+    </div>
+
+    <!-- Burger Button (Mobile) -->
+    <button class="md:hidden block focus:outline-none" aria-label="Open main menu" onclick="toggleDropdown()">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Dropdown Menu -->
+<div id="dropdownMenu" class="fixed top-12 left-0 w-full bg-[#242424] text-white z-40 hidden animate-slide-down">
+  <div class="flex flex-col px-6 py-4 space-y-4 border-t border-gray-700">
+    <div class="relative">
+      <input type="text" class="text-gray-400 rounded px-3 py-2 w-full" placeholder="Search..." />
+      <button class="absolute right-3 top-1/2 transform -translate-y-1/2">
+        <i class="fas fa-search text-gray-400"></i>
+      </button>
+    </div>
+    <a href="History.html" class="hover:text-[#D7FD52] text-lg flex items-center gap-2">
+      <i class="fas fa-box"></i> Lacak Pesanan
+    </a>
+    <a href="#" class="hover:text-[#D7FD52] text-lg flex items-center gap-2">
+      <i class="fas fa-user"></i> Akun Saya
+    </a>
+  </div>
+</div>
+
+<script>
+  function toggleDropdown() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.classList.toggle("hidden");
+  }
+</script>
+<style>
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+
+  <!-- Main Content -->
+  <main class="p-4 pt-20">
+    <!-- GAME POPULER Section -->
+    <div class="py-8 px-4 kategori-content" data-kategori="semua">
+      <div class="flex py-8 justify-between items-center">
+        <h2 class="text-2xl font-bold">Game Populer</h2>
+      </div>
+      <div class="md:px-16 lg:px-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-6 gap-3 sm:gap-4">
+        <!-- Game Card 1 -->
+       <div class="w-full xl:max-w-[200px] flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler2.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Minecraft Java & Bedrock Edition - Microsoft</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="w-full xl:max-w-[200px] flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler1.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Minecraft Java & Bedrock Edition - Microsoft</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler3.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Resident Evil Village</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler6.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">GHOST of tsushima</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler5.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">GHOST of tsushima</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler6.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Minecraft Java & Bedrock Edition - Microsoft</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Game Card 1 -->
+       <div class="w-full xl:max-w-[200px] flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler2.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Minecraft Java & Bedrock Edition - Microsoft</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="w-full xl:max-w-[200px] flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler1.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Minecraft Java & Bedrock Edition - Microsoft</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler3.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Resident Evil Village</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler6.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">GHOST of tsushima</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler5.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">GHOST of tsushima</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler6.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Minecraft Java & Bedrock Edition - Microsoft</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Game Card 1 -->
+       <div class="w-full xl:max-w-[200px] flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler2.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Minecraft Java & Bedrock Edition - Microsoft</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="w-full xl:max-w-[200px] flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler1.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Minecraft Java & Bedrock Edition - Microsoft</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler3.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Resident Evil Village</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler6.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">GHOST of tsushima</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler5.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">GHOST of tsushima</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="w-full xl:max-w-[200px]  flex flex-col">
+      <img src="/assets/imgPopuler/imgpopuler6.png" class="rounded object-cover w-full" alt="game">
+      <div class="bg-[#242424] rounded-b-lg px-4 py-2 flex-1 flex flex-col justify-between">
+        <h1 class="text-sm md:text-lg lg:text-xl font-semibold break-words h-[80px] overflow-hidden">Minecraft Java & Bedrock Edition - Microsoft</h1>
+        <div class="md:flex lg:flex py-2 justify-between items-center gap-1 block space-y-2">
+          <div>
+            <p class="text-sm md:text-md">Rp.285.500</p>
+          </div>
+          <div>
+            <button class="md:px-16 lg:px-5 w-full py-1 md:text-lg bg-lime-400 rounded-lg  text-black"">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer - MOVED OUTSIDE the container div -->
+    <footer class="bg-[#242424] mt-10 rounded-t-[15px] w-full">
+        <div class="container mx-auto px-4 py-2">
+            <div class="flex flex-col md:flex-row justify-between mb-6">
+                <!-- Left -->
+                <div class="mb-4 md:mb-0">
+                    <div class="text-xl font-bold mb-1 text-white font-sans">Topup<span class="text-[#D7FD52]">in</span></div>
+                    <div class="text-sm text-gray-400 font-sans">Game Voucher</div>
+                </div>
+                
+                <!-- Right -->
+                <div class="text-right">
+                    <div class="text-sm font-semibold mb-2 text-white font-sans">Metode Pembayaran</div>
+                    <div class="flex flex-wrap justify-end gap-2">
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../assets/logopembayaran/qris.png" alt="QRIS" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../assets/logopembayaran/blu.png" alt="BLU" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../assets/logopembayaran/dana.png" alt="DANA" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../assets/logopembayaran/ovo.png" alt="OVO" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer bawah -->
+            <div class="border-t border-gray-800 pt-4 flex flex-wrap gap-4 justify-center md:justify-start text-xs text-gray-500 font-sans">
+                <span>©2023</span>
+                <span>Privacy</span>
+                <span>Terms</span>
+                <span>Sitemap</span>
+                <span>Blog</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

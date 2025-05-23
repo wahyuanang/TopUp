@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topupin - Minecraft Shop</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/oTopupin.css">
+    <script src="../assets/js/Home.js"></script>
+    <script src="../assets/js/simplePageSystem.js"></script>
+    <style>
+        @media (max-width: 640px) {
+            .mobile-menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #242424;
+                width: 100%;
+                z-index: 50;
+                padding: 1rem;
+                border-bottom: 1px solid #333;
+                transition: all 0.3s ease-in-out;
+            }
+            .mobile-menu.hidden {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black">
+      <!-- Navbar -->
+    <nav class="bg-[#242424] p-3 border-b border-gray-800 text-white fixed top-0 w-full z-50">
+    <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-lg font-bold">
+            <a href="../Home.html">Topup<span class="text-[#D7FD52]">in</span></a>
+        </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-4">
+        <div class="relative">
+            <input type="text" class="text-gray-400 rounded px-3 py-1 w-48" placeholder="Search..." />
+            <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                <i class="fas fa-search text-gray-400"></i>
+            </button>
+        </div>
+        <a href="History.html" class="hover:text-[#D7FD52] flex items-center gap-1">
+            <i class="fas fa-box"></i> Lacak Pesanan
+        </a>
+        <a href="#" class="hover:text-[#D7FD52]">
+          <i class="fas fa-user"></i>
+        </a>
+    </div>
+
+    <!-- Burger Button (Mobile) -->
+    <button class="md:hidden block focus:outline-none" onclick="toggleDropdown()">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Dropdown Menu -->
+<div id="dropdownMenu" class="fixed top-12 left-0 w-full bg-[#242424] text-white z-40 hidden animate-slide-down">
+  <div class="flex flex-col px-6 py-4 space-y-4 border-t border-gray-700">
+    <div class="relative">
+      <input type="text" class="text-gray-400 rounded px-3 py-2 w-full" placeholder="Search..." />
+      <button class="absolute right-3 top-1/2 transform -translate-y-1/2">
+        <i class="fas fa-search text-gray-400"></i>
+      </button>
+    </div>
+    <a href="History.html" class="hover:text-[#D7FD52] text-lg flex items-center gap-2">
+      <i class="fas fa-box"></i> Lacak Pesanan
+    </a>
+    <a href="#" class="hover:text-[#D7FD52] text-lg flex items-center gap-2">
+      <i class="fas fa-user"></i> Akun Saya
+    </a>
+  </div>
+</div>
+
+<script>
+  function toggleDropdown() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.classList.toggle("hidden");
+  }
+</script>
+<style>
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>
+
+
+    <!-- Main Content -->
+    <main class="container mx-auto my-6 px-4 mt-20">
+        <!--Button Kembali-->
+        <div class="mb-6">
+            <a href="Account.html" class="text-white hover:text-[#D7FD52] flex items-center gap-2 w-fit top-4">
+                <i class="fas fa-arrow-left"></i> <span class="font-bold">Kembali</span>
+            </a>
+        </div>
+        <!-- Product Header -->
+        <div class="bg-black text-white p-4 rounded flex flex-col sm:flex-row items-center mb-6">
+            <div class="mr-0 sm:mr-4 mb-4 sm:mb-0">
+                <img src="../assets/logogame/logococ.png" alt="Clash Of Clans Logo" class="w-16 h-16 rounded">
+            </div>
+            <div class="text-center sm:text-left">
+                <h1 class="text-lg font-bold">Clash Of Clans</h1>
+                <p class="text-sm text-gray-400">Beli Akun Clash Of Clans serta Gems pakai tools promo, harian hingga 395, Top Up COC termurah & proses instant di Topupin.</p>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <!--<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">-->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Product 1 -->
+            <div class="bg-gray-800 text-white rounded overflow-hidden">
+                <div class="relative">
+                <img src="../assets/other/basecoc.webp" alt="Town Hall 9" class="w-full" width="300" height="200" loading="lazy">
+                <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 9 / TH 9</span>
+                <span class="absolute top-2 right-2">
+                    <i class="fas fa-star text-yellow-400"></i>
+                </span>
+            </div>
+            <div class="p-3">
+                <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX MURAH</p>
+                <p class="text-[#D7FD52] text-xs sm:text-sm mb-2">Rp150.000/ Akun</p>
+                <button class="bg-[#D7FD52] text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+            </div>
+        </div>
+
+    <!-- Product 2 -->
+    <div class="bg-gray-800 text-white rounded overflow-hidden">
+        <div class="relative">
+            <img src="../assets/other/basecoc.webp" alt="Town Hall 10" class="w-full" width="300" height="200" loading="lazy">
+            <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 10 / TH 10</span>
+            <span class="absolute top-2 right-2">
+                <i class="fas fa-star text-yellow-400"></i>
+            </span>
+        </div>
+        <div class="p-3">
+            <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX MURAH</p>
+            <p class="text-[#D7FD52] text-xs sm:text-sm mb-2">Rp200.000/ Akun</p>
+            <button class="bg-[#D7FD52] text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+        </div>
+    </div>
+
+            <!-- Product 3 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 11" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 11 / TH 11</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp250.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 12" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 12 / TH 12</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp300.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 13" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 13 / TH 13</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp350.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 9" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 9 / TH 9</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp100.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 10" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 10 / TH 10</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp150.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 11" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 11 / TH 11</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp200.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 12" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 12 / TH 12</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp250.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 13" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 13 / TH 13</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp300.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 1 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 9" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 9 / TH 9</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp150.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 10" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 10 / TH 10</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp200.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 11" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 11 / TH 11</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp250.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 12" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 12 / TH 12</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp300.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 13" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 13 / TH 13</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp350.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 9" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 9 / TH 9</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp100.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 10" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 10 / TH 10</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp150.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 11" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 11 / TH 11</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp200.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 12" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 12 / TH 12</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp250.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 13" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 13 / TH 13</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX MURAH</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp300.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+            
+            <!-- Product 11 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 12 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp380.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 13 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 15" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 15 / TH 15</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 15</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp550.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 14 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 15" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 15 / TH 15</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 15</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp480.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 15 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 16 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 17 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 18 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 19 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 20 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 11 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 12 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp380.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 13 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 15" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 15 / TH 15</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 15</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp550.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 14 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 15" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 15 / TH 15</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 15</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp480.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 15 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 16 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 17 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 18 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 19 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 20 (Halaman 2) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-2-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 21 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp550.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 22 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp480.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 23 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp750.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 24 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp380.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 25 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 26 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp380.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 27 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 28 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp380.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 29 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 30 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp380.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 21 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp550.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 22 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp480.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 23 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp750.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 24 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp380.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 25 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 26 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp380.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 27 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 28 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp380.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 29 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SIAP MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp450.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+
+            <!-- Product 30 (Halaman 3) -->
+            <div class="bg-[#242424] text-white rounded overflow-hidden page-3-product" style="display: none;">
+                <div class="relative">
+                    <img src="../assets/other/basecoc.png" alt="Town Hall 14" class="w-full">
+                    <span class="absolute top-2 left-2 bg-gray-800 text-white px-2 py-1 text-xs rounded">TOWN HALL 14 / TH 14</span>
+                    <span class="absolute top-2 right-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="p-3">
+                    <p class="font-bold mb-1 text-sm sm:text-base">SEMI MAX TOWN HALL 14</p>
+                    <p class="text-lime-400 text-xs sm:text-sm mb-2">Rp380.000/ Akun</p>
+                    <button class="bg-lime-400 text-black px-3 sm:px-4 py-1 rounded text-xs sm:text-sm float-right mt-2 sm:mt-4 mb-2 sm:mb-3"><a href="Buy.html">Beli</a></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pagination yang diperbarui -->
+        <div class="flex justify-center mt-8">
+            <nav class="inline-flex rounded-md shadow pagination-nav">
+                <a href="#" class="prev-btn px-3 py-2 rounded-l-md bg-[#242424] text-white hover:bg-lime-400 hover:text-black">
+                    <span class="sr-only">Previous</span>
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <a href="#" class="px-3 py-2 bg-lime-400 text-black" data-page="1">1</a>
+                <a href="#" class="px-3 py-2 bg-[#242424] text-white hover:bg-lime-400 hover:text-black" data-page="2">2</a>
+                <a href="#" class="px-3 py-2 bg-[#242424] text-white hover:bg-lime-400 hover:text-black" data-page="3">3</a>
+                <a href="#" class="next-btn px-3 py-2 rounded-r-md bg-[#242424] text-white hover:bg-lime-400 hover:text-black">
+                    <span class="sr-only">Next</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </nav>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-[#242424] mt-10 rounded-t-[15px] w-full">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between mb-6">
+                <!-- Left -->
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <div class="text-xl font-bold mb-2 text-white font-sans">Topup<span class="text-[#D7FD52]">in</span></div>
+                    <div class="text-sm text-gray-400 font-sans">Game Voucher</div>
+                </div>
+                
+                <!-- Right -->
+                <div class="text-center md:text-right">
+                    <div class="text-sm font-semibold mb-3 text-white font-sans">Metode Pembayaran</div>
+                    <div class="flex flex-wrap justify-center md:justify-end gap-3">
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../../assets/logopembayaran/qris.png" alt="QRIS" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../../assets/logopembayaran/blu.png" alt="BLU" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../../assets/logopembayaran/dana.png" alt="DANA" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../../assets/logopembayaran/ovo.png" alt="OVO" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="border-t border-gray-800 pt-4 flex flex-wrap gap-4 justify-center text-xs text-gray-500 font-sans">
+                <span>©2023</span>
+                <span>Privacy</span>
+                <span>Terms</span>
+                <span>Sitemap</span>
+                <span>Blog</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

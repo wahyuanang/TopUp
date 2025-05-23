@@ -1,0 +1,16 @@
+{
+  "name": "topupin",
+  "version": "1.0.0",
+  "description": "Topupin adalah website top up untuk membeli barang-barang ekslusif pada game favorit kamu",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx @tailwindcss/cli -i ./assets/css/iTopupin.css -o ./assets/css/oTopupin.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.7",
+    "tailwindcss": "^4.1.7"
+  }
+}

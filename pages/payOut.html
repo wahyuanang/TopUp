@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topupin</title>
+    <link rel="stylesheet" href="../assets/css/oTopupin.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/oTopupin.css">
+</head>
+<body class="bg-black text-white">
+          <!-- Navbar -->
+    <nav class="bg-[#242424] p-3 border-b border-gray-800 text-white fixed top-0 w-full z-50">
+    <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-lg font-bold">
+            <a href="/Home.html">Topup<span class="text-[#D7FD52]">in</span></a>
+        </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-4">
+        <div class="relative">
+            <input type="text" class="text-gray-400 rounded px-3 py-1 w-48" placeholder="Search..." />
+            <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                <i class="fas fa-search text-gray-400"></i>
+            </button>
+        </div>
+        <a href="History.html" class="hover:text-[#D7FD52] flex items-center gap-1">
+            <i class="fas fa-box"></i> Lacak Pesanan
+        </a>
+        <a href="#" class="hover:text-[#D7FD52]">
+          <i class="fas fa-user"></i>
+        </a>
+    </div>
+
+    <!-- Burger Button (Mobile) -->
+    <button class="md:hidden block focus:outline-none" onclick="toggleDropdown()">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Dropdown Menu -->
+<div id="dropdownMenu" class="fixed top-12 left-0 w-full bg-[#242424] text-white z-40 hidden animate-slide-down">
+  <div class="flex flex-col px-6 py-4 space-y-4 border-t border-gray-700">
+    <div class="relative">
+      <input type="text" class="text-gray-400 rounded px-3 py-2 w-full" placeholder="Search..." />
+      <button class="absolute right-3 top-1/2 transform -translate-y-1/2">
+        <i class="fas fa-search text-gray-400"></i>
+      </button>
+    </div>
+    <a href="History.html" class="hover:text-[#D7FD52] text-lg flex items-center gap-2">
+      <i class="fas fa-box"></i> Lacak Pesanan
+    </a>
+    <a href="#" class="hover:text-[#D7FD52] text-lg flex items-center gap-2">
+      <i class="fas fa-user"></i> Akun Saya
+    </a>
+  </div>
+</div>
+    <!-- Main Content -->
+    <div class="bg-black text-white p-6 rounded-lg container mx-auto my-6 px-4 mt-10">
+        <!--Button Kembali-->
+        <div class="mb-6">
+            <a href="Account.html" class="text-white hover:text-[#D7FD52] flex items-center gap-2 w-fit">
+                <i class="fas fa-arrow-left"></i> <span class="font-bold">Kembali</span>
+            </a>
+        </div>
+        <!-- Product Header -->
+        <div class="bg-black text-white p-4 rounded flex flex-col sm:flex-row items-center mb-5">
+            <div class="mr-0 sm:mr-4 mb-4 sm:mb-0">
+                <img src="/assets/logogame/logovalo.png" alt="Clash Of Clans Logo" class="w-20 h-20 rounded">
+            </div>
+            <div class="text-center sm:text-left">
+                <h1 class="text-lg font-bold">Valorant</h1>
+                <p class="text-sm text-gray-400">Beli Valorant Points lebih murah pakai kode promo, hemat hingga 39%. Top Up Valorant Points murah & proses instan di Topupin..</p>
+            </div>
+        </div>
+
+
+        <!-- Tab Navigation -->
+        <div class="flex gap-2 mb-6 ">
+            <button class="bg-[#D7FD52] rounded-[13px] py-2 px-8 hover:bg-zinc-700 active:bg-zinc-600 transition text-black">TOP UP</button>
+            <button class="bg-[#242424] rounded-[13px] py-2 px-8 hover:bg-zinc-700 active:bg-zinc-600 transition">AKUN</button>
+            <button class="bg-[#242424] rounded-[13px] py-2 px-8 hover:bg-zinc-700 active:bg-zinc-600 transition">ITEM</button>
+            <button class="bg-[#242424] rounded-[13px] py-2 px-8 hover:bg-zinc-700 active:bg-zinc-600 transition">JASA JOKI</button>
+        </div>
+
+        <!-- Main Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Left Section - Nominal Selection -->
+            <div class="md:col-span-2">
+                <div class="bg-[#D7FD52] text-black p-3 rounded-t-[15px] font-bold flex items-center p-2">
+                     <div class="text-gray-800 text-lg font-bold">Pilih Nominal Top Up</div>
+                </div>
+                <div class="bg-[#242424] p-4 rounded-b-lg">
+                    <div class="grid grid-cols-3 gap-4">
+                        <!-- Topup Options -->
+                        <div class="nominal-card border border-[#D7FD52] bg-[#242424] rounded-lg cursor-pointer" data-price="14,500" data-amount="53 VP">
+                            <div class="p-4 flex justify-center">
+                                <img src="../assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                                <img src="/assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                            </div>
+                            <div class="p-2 text-center text-sm">
+                                53 VP<br>
+                                <span class="text-xs text-gray-300">SD + Bonus</span>
+                            </div>
+                            <div class="bg-[#D7FD52] text-black text-center p-1">
+                                Rp14.500
+                            </div>
+                        </div>
+
+                        <div class="nominal-card border border-[#D7FD52] bg-[#242424]  rounded-lg cursor-pointer" data-price="28,500" data-amount="154 VP">
+                            <div class="p-4 flex justify-center">
+                                <img src="../assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                                <img src="/assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                            </div>
+                            <div class="p-2 text-center text-sm">
+                                154 VP<br>
+                                <span class="text-xs text-gray-300">SD + Bonus</span>
+                            </div>
+                            <div class="bg-[#D7FD52] text-black text-center p-1">
+                                Rp28.500
+                            </div>
+                        </div>
+
+                        <div class="nominal-card border border-[#D7FD52] bg-[#242424]  rounded-lg cursor-pointer" data-price="45,000" data-amount="256 VP">
+                            <div class="p-4 flex justify-center">
+                                <img src="/assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                                <img src="/assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                            </div>
+                            <div class="p-2 text-center text-sm">
+                                256 VP<br>
+                                <span class="text-xs text-gray-300">SD + Bonus</span>
+                            </div>
+                            <div class="bg-[#D7FD52] text-black text-center p-1">
+                                Rp45.000
+                            </div>
+                        </div>
+
+                        <div class="nominal-card border border-[#D7FD52] bg-[#242424]  rounded-lg cursor-pointer" data-price="70,000" data-amount="503 VP">
+                            <div class="p-4 flex justify-center">
+                                <img src="../assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                                <img src="/assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                            </div>
+                            <div class="p-2 text-center text-sm">
+                                503 VP<br>
+                                <span class="text-xs text-gray-300">SD + Bonus</span>
+                            </div>
+                            <div class="bg-[#D7FD52] text-black text-center p-1">
+                                Rp70.000
+                            </div>
+                        </div>
+
+                        <div class="nominal-card border border-[#D7FD52] bg-[#242424]  rounded-lg cursor-pointer" data-price="140,000" data-amount="1010 VP">
+                            <div class="p-4 flex justify-center">
+                                <img src="../assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                                <img src="/assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                            </div>
+                            <div class="p-2 text-center text-sm">
+                                1010 VP<br>
+                                <span class="text-xs text-gray-300">SD + Bonus</span>
+                            </div>
+                            <div class="bg-[#D7FD52] text-black text-center p-1">
+                                Rp140.000
+                            </div>
+                        </div>
+
+                        <div class="nominal-card border border-[#D7FD52] bg-[#242424]  rounded-lg cursor-pointer" data-price="280,000" data-amount="2020 VP">
+                            <div class="p-4 flex justify-center">
+                                <img src="../assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                                <img src="/assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                            </div>
+                            <div class="p-2 text-center text-sm">
+                                2020 VP<br>
+                                <span class="text-xs text-gray-300">SD + Bonus</span>
+                            </div>
+                            <div class="bg-[#D7FD52] text-black text-center p-1">
+                                Rp280.000
+                            </div>
+                        </div>
+
+                        <div class="nominal-card border border-[#D7FD52] bg-[#242424]  rounded-lg cursor-pointer" data-price="350,000" data-amount="3330 VP">
+                            <div class="p-4 flex justify-center">
+                                <img src="../assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                                <img src="/assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                            </div>
+                            <div class="p-2 text-center text-sm">
+                                3330 VP<br>
+                                <span class="text-xs text-gray-300">SD + Bonus</span>
+                            </div>
+                            <div class="bg-[#D7FD52] text-black text-center p-1">
+                                Rp350.000
+                            </div>
+                        </div>
+
+                        <div class="nominal-card border border-[#D7FD52] bg-[#242424]  rounded-lg cursor-pointer" data-price="450,000" data-amount="4440 VP">
+                            <div class="p-4 flex justify-center">
+                                <img src="../assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                                <img src="/assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                            </div>
+                            <div class="p-2 text-center text-sm">
+                                4440 VP<br>
+                                <span class="text-xs text-gray-300">SD + Bonus</span>
+                            </div>
+                            <div class="bg-[#D7FD52] text-black text-center p-1">
+                                Rp450.000
+                            </div>
+                        </div>
+
+                        <div class="nominal-card border border-[#D7FD52] bg-[#242424]  rounded-lg cursor-pointer" data-price="725,000" data-amount="8880 VP">
+                            <div class="p-4 flex justify-center">
+                                <img src="../assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+
+                                <img src="/assets/diamondgame/diamondcalo.png" alt="Valorant Points" class="w-12 h-12">
+                            </div>
+                            <div class="p-2 text-center text-sm">
+                                8880 VP<br>
+                                <span class="text-xs text-gray-300">SD + Bonus</span>
+                            </div>
+                            <div class="bg-[#D7FD52] text-black text-center p-1">
+                                Rp725.000
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Method Section -->
+                <div class="mt-6">
+                    <div class="bg-[#D7FD52] text-black p-3 rounded-t-[15px] font-bold">
+                        Pilih Metode Pembayaran
+                    </div>
+                    <div class="flex justify-center bg-[#242424] p-16 rounded-b-[15px]">
+                        <div class="flex gap-4">
+                            <!-- Payment Options -->
+                            <div class="payment-method bg-white rounded-lg p-2 flex items-center justify-center cursor-pointer" data-method="OVO">
+                                <img src="/assets/logopembayaran/ovo.png" alt="OVO" class="h-8">
+                            </div>
+                            <div class="payment-method bg-white rounded-lg p-2 flex items-center justify-center cursor-pointer" data-method="QRIS">
+                                <img src="/assets/logopembayaran/qris.png" alt="QRIS" class="h-8">
+                            </div>
+                            <div class="payment-method bg-white rounded-lg p-2 flex items-center justify-center cursor-pointer" data-method="DANA">
+                                <img src="/assets/logopembayaran/dana.png" alt="DANA" class="h-8">
+                            </div>
+                            <div class="payment-method bg-white rounded-lg p-2 flex items-center justify-center cursor-pointer" data-method="BCA">
+                                <img src="/assets/logopembayaran/blu.png" alt="BCA" class="h-8">
+
+                                <img src="/assets/logopembayaran/ovo.png" alt="OVO" class="h-8">
+                            </div>
+                            <div class="payment-method bg-white rounded-lg p-2 flex items-center justify-center cursor-pointer" data-method="QRIS">
+                                <img src="/assets/logopembayaran/qris.png" alt="QRIS" class="h-8">
+                            </div>
+                            <div class="payment-method bg-white rounded-lg p-2 flex items-center justify-center cursor-pointer" data-method="DANA">
+                                <img src="/assets/logopembayaran/dana.png" alt="DANA" class="h-8">
+                            </div>
+                            <div class="payment-method bg-white rounded-lg p-2 flex items-center justify-center cursor-pointer" data-method="BCA">
+                                <img src="/assets/logopembayaran/blu.png" alt="BCA" class="h-8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-lg mx-auto bg-[#242424] rounded-[16px] shadow-lg text-white font-sans">
+              <!-- Header -->
+              <div class="text-center bg-[#D7FD52] text-black font-bold py-3 text-lg rounded-t-[16px]">
+                Checkout
+              </div>
+
+              <!-- Form -->
+              <form id="checkoutForm" class="px-6 py-7 space-y-5 text-sm">
+                <!-- WhatsApp (optional) -->
+                <div>
+                  <div class="flex items-start gap-4">
+                    <label class="min-w-[130px] font-semibold pt-2">
+                      No. WhatsApp <span class="text-[#D7FD52]">(opsional)</span>
+                    </label>
+                    <div class="flex-1">
+                      <input type="tel" id="whatsapp" placeholder="Nomor ini akan dihubungi..." class="w-full bg-white text-black rounded-[8px] px-6 py-3 text-sm placeholder-gray-400 focus:outline-none">
+                      <p class="text-xs text-gray-400 mt-2 leading-snug">Nomor ini akan dihubungi apabila ada kendala. Bisa dikosongkan jika lupa.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- User ID -->
+                <div class="flex items-center gap-4">
+                  <label class="min-w-[130px] font-semibold">User ID <span class="text-red-500">*</span></label>
+                  <input type="text" id="userId" placeholder="Masukkan User ID" class="flex-1 bg-white text-black rounded-[8px] px-6 py-3 text-sm focus:outline-none" required>
+                </div>
+
+                <!-- Server -->
+                <div class="flex items-center gap-4">
+                  <label class="min-w-[130px] font-semibold">Server <span class="text-red-500">*</span></label>
+                  <input type="text" id="server" placeholder="Masukkan Server" class="flex-1 bg-white text-black rounded-[8px] px-6 py-3 text-sm focus:outline-none" required>
+                </div>
+
+                <!-- Promo -->
+                <div class="flex items-center gap-4">
+                  <label class="min-w-[130px] font-semibold">Kode promo</label>
+                  <input type="text" id="promoCode" placeholder="Masukkan Kode Promo" class="flex-1 bg-white text-black rounded-[8px] px-6 py-3 text-sm focus:outline-none">
+                </div>
+
+                <!-- Order Summary -->
+                <div class="text-sm mt-2">
+                  <p class="font-semibold mb-2">Ringkasan Pesanan</p>
+                  <div class="bg-[#242424] border border-[#D7FD52] rounded-[18px] p-4 space-y-2 text-sm">
+                    <div class="flex justify-between">
+                      <span>Membeli Item</span>
+                       <span id="amount-display">53 Diamonds</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Metode Pembayaran</span>
+                      <span id="payment-method-display" class="text-gray-300">QRIS</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Harga Awal</span>
+                      <span id="price-display">Rp17.398</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Biaya Admin</span>
+                      <span>Rp0</span>
+                    </div>
+                    <div class="flex justify-between font-semibold text-[#D7FD52] pt-2 border-t border-[#D7FD52]">
+                      <span>Total</span>
+                      <span id="total-price-display">Rp17.398</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Checkout Button -->
+                <button type="submit" class="w-full bg-[#D7FD52] text-black font-bold py-3 rounded-[10px] text-sm mt-4">
+                  beli sekarang
+                </button>
+              </form>
+            </div>
+        </div>
+    </div>
+
+   <!-- Payment Popup Modal -->
+<div id="paymentPopup" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden">
+  <div class="bg-black rounded-2xl max-w-md w-full mx-4 relative overflow-hidden shadow-lg text-white">
+
+    <!-- Header -->
+    <div class="bg-[#242424] text-white p-4 rounded-t-2xl flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="/assets/logogame/logovalo.png" alt="Codashop" class="w-8 h-8">
+        <span class="font-bold text-white">Topupin</span>
+      </div>
+      <div class="flex items-center gap-4 text-sm">
+        <div class="flex items-center gap-1">
+          <i class="fas fa-shield-alt"></i>
+          <span>Secure</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <span>🇮🇩</span>
+          <span>Indonesian</span>
+        </div>
+        <button onclick="closePaymentPopup()" class="ml-2 text-white hover:text-gray-400 text-xl font-bold">
+          &times;
+        </button>
+      </div>
+    </div>
+
+    <!-- Check Icon -->
+    <div class="flex justify-center pt-6">
+      <div class="bg-green-500 w-20 h-20 rounded-full flex items-center justify-center">
+        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="p-6 text-white text-sm text-center">
+      <div class="bg-white text-black border border-gray-300 rounded-xl p-4 mb-4 space-y-2">
+        <div class="flex justify-between text-sm">
+          <span class="font-medium">Item</span>
+          <span class="font-bold text-black" id="popup-amount">1000 VP</span>
+        </div>
+        <div class="flex justify-between text-sm">
+          <span class="font-medium">Pedagang</span>
+          <span class="font-bold text-black">Topupin</span>
+        </div>
+        <div class="flex justify-between text-sm">
+          <span class="font-medium">Jumlah Total</span>
+          <span class="font-bold text-black" id="popup-total">Rp. 112.000</span>
+        </div>
+        <div class="text-left">
+          <span class="font-medium">Metode Pembayaran</span>
+          <div class="flex items-center gap-2 mt-1">
+            <img src="/assets/logopembayaran/dana.png" alt="Dana" class="h-5">
+            <span class="font-bold" id="popup-payment-method">DANA</span>
+          </div>
+        </div>
+
+        <!-- Instruction -->
+        <div class="-mt-4 bg-[#D7FD52] text-black font-semibold text-center py-4 px-4 rounded-b-xl z-10 relative">
+        Tekan tombol untuk menyelesaikan pembayaran Anda dengan <span id="popup-payment-text">DANA</span>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <button onclick="proceedPayment()" class="w-full bg-[#D7FD52] text-black font-bold py-3 rounded-lg hover:bg-[#c5e94a] transition">
+        BELI
+      </button>
+
+      <!-- Terms -->
+      <p class="text-xs text-gray-400 text-center mt-4 leading-relaxed">
+        Dengan melanjutkan, artinya Anda setuju dengan 
+        <a href="#" class="text-blue-400 underline">Syarat dan Ketentuan</a> 
+        dan juga 
+        <a href="#" class="text-blue-400 underline">kebijakan privasi</a> kami.
+      </p>
+      <p class="text-xs text-gray-400 text-center">
+        Butuh bantuan? Kunjungi 
+        <a href="#" class="text-blue-400 underline">pusat bantuan</a> kami!
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#242424] mt-10 rounded-t-[15px] w-full">
+        <div class="container mx-auto px-4 py-2">
+            <div class="flex flex-col md:flex-row justify-between mb-6">
+                <!-- Left -->
+                <div class="mb-4 md:mb-0">
+                    <div class="text-xl font-bold mb-1 text-white font-sans">Topup<span class="text-[#D7FD52]">in</span></div>
+                    <div class="text-sm text-gray-400 font-sans">Game Voucher</div>
+                </div>
+                
+                <!-- Right -->
+                <div class="text-right">
+                    <div class="text-sm font-semibold mb-2 text-white font-sans">Metode Pembayaran</div>
+                    <div class="flex flex-wrap justify-end gap-2">
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="/assets/logopembayaran/qris.png" alt="QRIS" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="/assets/logopembayaran/blu.png" alt="BLU" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="/assets/logopembayaran/dana.png" alt="DANA" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="/assets/logopembayaran/ovo.png" alt="OVO" class="w-full h-full object-contain">
+
+                            <img src="/assets/logopembayaran/qris.png" alt="QRIS" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="/assets/logopembayaran/blu.png" alt="BLU" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="/assets/logopembayaran/dana.png" alt="DANA" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="/assets/logopembayaran/ovo.png" alt="OVO" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer bawah -->
+            <div class="border-t border-gray-800 pt-4 flex flex-wrap gap-4 justify-center md:justify-start text-xs text-gray-500 font-sans">
+                <span>©2023</span>
+                <span>Privacy</span>
+                <span>Terms</span>
+                <span>Sitemap</span>
+                <span>Blog</span>
+            </div>
+        </div>
+    </footer>
+    <script src="/assets/js/payOut.js"></script>
+</body>
+</html>

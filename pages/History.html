@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topupin - Minecraft Shop</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/oTopupin.css">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-text {
+            font-weight: bold;
+        }
+        .green-text {
+            color: #9ef01a;
+        }
+        main {
+            flex: 1;
+        }
+        
+        /* Responsive styles for transaction history cards */
+        @media (max-width: 768px) {
+            .transaction-card {
+                flex-direction: column;
+            }
+            .transaction-card > div {
+                width: 100%;
+                margin-bottom: 8px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navbar -->
+    <nav class="bg-[#242424] p-3 border-b border-gray-800 text-white fixed top-0 w-full z-50">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-lg font-bold">
+                <a href="../Home.html">Topup<span class="text-[#D7FD52]">in</span></a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" class="bg-white text-gray-400 rounded px-3 py-1 w-48" placeholder="Search..." />
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                        <i class="fas fa-search text-gray-400"></i>
+                    </button>
+                </div>
+                <a href="History.html" class="hover:text-[#D7FD52] flex items-center gap-1">
+                    <i class="fas fa-box"></i> Lacak Pesanan
+                </a>
+                <a href="#" class="hover:text-[#D7FD52]">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+
+            <!-- Burger Button (Mobile) -->
+            <button class="md:hidden block focus:outline-none" onclick="toggleDropdown()">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="dropdownMenu" class="fixed top-12 left-0 w-full bg-[#242424] text-white z-40 hidden animate-slide-down">
+        <div class="flex flex-col px-6 py-4 space-y-4 border-t border-gray-700">
+            <div class="relative">
+                <input type="text" class="text-gray-400 rounded px-3 py-2 w-full" placeholder="Search..." />
+                <button class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                    <i class="fas fa-search text-gray-400"></i>
+                </button>
+            </div>
+            <a href="History.html" class="hover:text-[#D7FD52] text-lg flex items-center gap-2">
+                <i class="fas fa-box"></i> Lacak Pesanan
+            </a>
+            <a href="#" class="hover:text-[#D7FD52] text-lg flex items-center gap-2">
+                <i class="fas fa-user"></i> Akun Saya
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-auto mt-4">
+    <!--Button Kembali-->
+    <div class="mb-6 pt-20">
+        <a href="AccountCoc.html" class="text-white hover:text-[#D7FD52] flex items-center gap-2 w-fit top-4">
+            <i class="fas fa-arrow-left"></i> <span class="font-bold">Kembali</span>
+        </a>
+    </div>
+        <h1 class="text-2xl font-bold mb-6 px-7">Riwayat</h1>
+
+        <!-- Transaction History Cards -->
+        <div class="space-y-4">
+            <!-- Transaction 1 -->
+            <div class="bg-gray-900 rounded-lg p-4">
+                <div class="flex items-center justify-between flex-wrap transaction-card">
+                    <div class="flex items-center mb-2 md:mb-0">
+                        <div class="bg-black p-1 rounded mr-4">
+                            <img width="40" height="40" src="../assets/logogame/logovalo.png" alt="Valorant Logo">
+                        </div>
+                        <div>
+                            <div class="text-sm">Valorant</div>
+                            <div class="text-sm text-gray-400">500 VP</div>
+                        </div>
+                    </div>
+                    <div class="md:text-center mb-2 md:mb-0">
+                        <div class="text-sm">Harga</div>
+                        <div class="text-sm text-gray-400">Rp53.300</div>
+                    </div>
+                    <div class="md:text-center mb-2 md:mb-0">
+                        <div class="text-sm">Metode Pembayaran</div>
+                        <div class="text-sm text-gray-400">QRIS (PPN 0%)</div>
+                    </div>
+                    <div class="md:text-right">
+                        <div class="text-sm">Tanggal</div>
+                        <div class="text-sm text-gray-400">02 mei 2025, 17:54:21</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transaction 2 -->
+            <div class="bg-gray-900 rounded-lg p-4">
+                <div class="flex items-center justify-between flex-wrap transaction-card">
+                    <div class="flex items-center mb-2 md:mb-0">
+                        <div class="bg-black p-1 rounded mr-4">
+                            <img width="40" height="40" src="../assets/logogame/logovalo.png" alt="Valorant Logo">
+                        </div>
+                        <div>
+                            <div class="text-sm">Valorant</div>
+                            <div class="text-sm text-gray-400">500 VP</div>
+                        </div>
+                    </div>
+                    <div class="md:text-center mb-2 md:mb-0">
+                        <div class="text-sm">Harga</div>
+                        <div class="text-sm text-gray-400">Rp53.300</div>
+                    </div>
+                    <div class="md:text-center mb-2 md:mb-0">
+                        <div class="text-sm">Metode Pembayaran</div>
+                        <div class="text-sm text-gray-400">QRIS (PPN 0%)</div>
+                    </div>
+                    <div class="md:text-right">
+                        <div class="text-sm">Tanggal</div>
+                        <div class="text-sm text-gray-400">02 mei 2025, 17:54:21</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#242424] rounded-t-[15px] w-full mt-auto">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between mb-6">
+                <!-- Left -->
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <div class="text-xl font-bold mb-2 text-white font-sans">Topup<span class="text-[#D7FD52]">in</span></div>
+                    <div class="text-sm text-gray-400 font-sans">Game Voucher</div>
+                </div>
+                
+                <!-- Right -->
+                <div class="text-center md:text-right">
+                    <div class="text-sm font-semibold mb-3 text-white font-sans">Metode Pembayaran</div>
+                    <div class="flex flex-wrap justify-center md:justify-end gap-3">
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../../assets/logopembayaran/qris.png" alt="QRIS" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../../assets/logopembayaran/blu.png" alt="BLU" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../../assets/logopembayaran/dana.png" alt="DANA" class="w-full h-full object-contain">
+                        </div>
+                        <div class="bg-white rounded p-1 w-12 h-6 flex items-center justify-center">
+                            <img src="../../assets/logopembayaran/ovo.png" alt="OVO" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="border-t border-gray-800 pt-4 flex flex-wrap gap-4 justify-center text-xs text-gray-500 font-sans">
+                <span>©2023</span>
+                <span>Privacy</span>
+                <span>Terms</span>
+                <span>Sitemap</span>
+                <span>Blog</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        function toggleDropdown() {
+            const menu = document.getElementById("dropdownMenu");
+            menu.classList.toggle("hidden");
+        }
+    </script>
+    
+    <style>
+        .animate-slide-down {
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</body>
+</html>
